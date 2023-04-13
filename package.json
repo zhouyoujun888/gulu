@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/zhouyoujun888/gulu#readme",
   "dependencies": {
-    "vue": "^3.2.47"
+    "vue": "^2.7.14"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   }
 }
