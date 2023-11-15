@@ -11,7 +11,7 @@
     "url": "git+https://github.com/zhouyoujun888/gulu.git"
   },
   "keywords": [
-    "vue，ui"
+    "vue,ui"
   ],
   "author": "zhouyoujun",
   "license": "MIT",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/zhouyoujun888/gulu#readme",
   "dependencies": {
-    "vue": "^3.3.8"
+    "vue": "^2.3.8"
   }
 }
