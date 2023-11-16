@@ -1,6 +1,7 @@
 <template>
   <button class="g-button" :class="{ [`icon-${icon_position}`]: true }">
     <g-icon v-if="icon" :name="icon" class="icon"></g-icon>
+    <g-icon name="loading" class="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -29,6 +30,15 @@ export default {
 </script>
 
 <style lang="scss">
+// 动画变亮
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .g-button {
   display: inline-flex;
   align-items: center;
@@ -65,6 +75,9 @@ export default {
     > .content {
       order: 1;
     }
+  }
+  .loading {
+    animation: spin 1s infinite linear;
   }
 }
 </style>
