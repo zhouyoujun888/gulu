@@ -16,3 +16,72 @@ new Vue({
     };
   },
 });
+
+//单元测试1 icon
+import chai from "chai";
+let expect = chai.expect;
+{
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "settings",
+    },
+  });
+  vm.$mount("#test");
+  let useElement = vm.$el.querySelector("use");
+  let herf = useElement.getAttribute("xlink:href");
+  expect(herf).to.equal("#i-settings");
+  vm.$el.remove();
+  vm.$destroy();
+}
+//单元测试2 loading
+{
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "settings",
+      loading: true,
+    },
+  });
+  vm.$mount();
+  let useElement = vm.$el.querySelector("use");
+  let herf = useElement.getAttribute("xlink:href");
+  expect(herf).to.equal("#i-loading");
+  vm.$el.remove();
+  vm.$destroy();
+}
+//单元测试3 默认icon为settings order为‘1’
+{
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "settings",
+    },
+  });
+  vm.$mount(div);
+  let svg = vm.$el.querySelector("svg");
+  let { order } = window.getComputedStyle(svg);
+  expect(order).to.equal("1");
+  vm.$el.remove();
+  vm.$destroy();
+}
+//单元测试4 默认iconPosition为right order为‘1’
+{
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "settings",
+      iconPosition: "right",
+    },
+  });
+  vm.$mount(div);
+  let svg = vm.$el.querySelector("svg");
+  let { order } = window.getComputedStyle(svg);
+  expect(order).to.equal("1");
+  vm.$el.remove();
+  vm.$destroy();
+}
