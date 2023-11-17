@@ -2,6 +2,8 @@ import Vue from "vue";
 import Button from "./button.vue";
 import Icon from "./icon.vue";
 import buttonGroup from "./button-group.vue";
+import spies from "chai-spies";
+chai.use(spies);
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
@@ -84,4 +86,19 @@ let expect = chai.expect;
   expect(order).to.equal("1");
   vm.$el.remove();
   vm.$destroy();
+}
+//单元测试5 click事件 使用chai-spies间谍函数   mock
+{
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "settings",
+    },
+  });
+  vm.$mount();
+  let spy = chai.spy(() => {});
+  vm.$on("click", spy);
+  let button = vm.$el;
+  button.click();
+  expect(spy).to.have.been.called;
 }
