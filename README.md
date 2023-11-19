@@ -7,3 +7,7 @@
 ```
 *{box-sizing:border-box;}
 ```
+
+### 使用 Karma+Mocha 做单元测试
+
+安装 npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies
