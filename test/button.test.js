@@ -16,8 +16,9 @@ describe("Button", () => {
         icon: "settings",
       },
     }).$mount();
+    console.log(vm.$el);
     const useElement = vm.$el.querySelector("use");
-    expect(useElement.getAttribute("xlink:href")).to.equal("#i-settings1");
+    expect(useElement.getAttribute("xlink:href")).to.equal("#i-settings");
     vm.$destroy();
   });
   it("可以设置loading.", () => {
@@ -54,10 +55,11 @@ describe("Button", () => {
     const vm = new Constructor({
       propsData: {
         icon: "settings",
-        iconPosition: "right",
+        icon_position: "right",
       },
     }).$mount(div);
     const icon = vm.$el.querySelector("svg");
+    console.log(getComputedStyle(icon).order);
     expect(getComputedStyle(icon).order).to.eq("2");
     vm.$el.remove();
     vm.$destroy();

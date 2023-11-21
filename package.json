@@ -1,11 +1,11 @@
 {
-  "name": "gulu",
-  "version": "1.0.0",
+  "name": "gulu-zhouyoujun",
+  "version": "0.0.1",
   "description": "这是一个UI框架",
   "main": "index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
-     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/zhouyoujun888/gulu#readme",
   "dependencies": {
+    
     "vue": "^2.3.8",
     "vue-hot-reload-api": "^2.3.4"
   },
