@@ -4,14 +4,66 @@
 
 ## 介绍
 
+这是我在学习 Vue 过程中做的一个 UI 框架，希望对你有用。
+
 ## 开始使用
 
-1.安装
-使用本框架前，请在 css 中开启 border-box
+1.  添加 css 样式
 
-```
-*{box-sizing:border-box;}
-```
+    使用本框架前，请在 css 中开启 border-box
+
+    ```
+    *{box-sizing:border-box;}
+    *::after{box-sizing:border-box;}
+    *::before{box-sizing:border-box;}
+    ```
+
+    IE 8 以上浏览器都支持此样式
+
+    你还需要设置默认颜色等变量（后续会改为 SCSS 变量）
+
+    ```
+    :root {
+          --button-height: 32px;
+          --font-size: 14px;
+          --button-bg: white;
+          --button-active-bg: #eee;
+          --border-radius: 4px;
+          --color: #333;
+          --border-color: #999;
+          --border-color-hover: #666;
+        }
+    ```
+
+    IE 15 及以上浏览器都支持此样式
+
+2.  安装 gulu-zhou
+
+        ```
+        npm install --save gulu-zhou
+        ```
+
+3.  引入 gulu-zhou
+
+        ```
+        import { Button, ButtonGroup, Icon } from "gulu-zhou";
+        import "gulu-zhou/dist/index.css";
+
+        export default {
+          name: "App",
+          components: {
+            "g-button": Button,
+            "g-icon": Icon,
+            "g-button-group": ButtonGroup,
+          },
+        };
+        ```
+
+4.  引入 svg symbols
+
+        ```
+        <script src="//at.alicdn.com/t/c/font_4333774_szog0zbbbxd.js"></script>
+        ```
 
 ## 文档
 
@@ -22,26 +74,3 @@
 ## 联系方式
 
 ## 贡献代码
-
-### 使用 Karma+Mocha 做单元测试
-
-安装 npm i -D karma karma-chrome-launcher karma-mocha karma-sinon-chai mocha sinon sinon-chai karma-chai karma-chai-spies
-
-### 持续集成 https://www.travis-ci.com/
-
-### 需要先引入 css
-
-```
- :root {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-      }
-```
-
-#### 需要引入 icon 线上地址 //at.alicdn.com/t/c/font_4333774_szog0zbbbxd.js
